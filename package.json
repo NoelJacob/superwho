@@ -1,0 +1,22 @@
+{
+  "name": "superwho",
+  "version": "0.1.2",
+  "author": "Noel Jacob",
+  "license": "Apache-2.0",
+  "description": "Find TLD availability for your domain name",
+  "keywords": ["TLD", "domain"],
+  "bin": {
+    "superwho": "./dist/index.js"
+  },
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun build --target node --outfile ./dist/out.js ./index.ts && { echo \"#!/usr/bin/env node\"; cat ./dist/out.js; } > ./dist/index.js && rm ./dist/out.js"
+  },
+  "devDependencies": {
+    "@types/node": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
